@@ -36,8 +36,7 @@ class PollBot(commands.AutoShardedBot):
         print("--------")
 
     async def on_message(self, message):
-        if not message.author.bot:
-            await self.process_commands(message)
+        await self.process_commands(message)
 
     def run(self):
         super().run(config.discordToken, reconnect=True)
